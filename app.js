@@ -65,7 +65,6 @@ app.get('/checkAvailable/:productId', function (req, res) {
   span.setTag(Tags.HTTP_METHOD, 'GET');
 
   // Process request.
-  // PR
   if (req.params.productId === "1") {
     span.setTag(Tags.HTTP_STATUS_CODE, 200);
     span.log({'event': 'Product is available'});
