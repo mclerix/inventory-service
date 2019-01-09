@@ -65,7 +65,7 @@ app.get('/checkAvailable/:productId', function (req, res) {
   span.setTag(Tags.HTTP_METHOD, 'GET');
 
   // Process request.
-  if (req.params.productId === "1" || req.params.productId === "3") {
+  if (req.params.productId === "1") {
     span.setTag(Tags.HTTP_STATUS_CODE, 200);
     span.log({'event': 'Product is available'});
     var waitTill = new Date(new Date().getTime() + 66);
@@ -78,7 +78,7 @@ app.get('/checkAvailable/:productId', function (req, res) {
     var waitTill = new Date(new Date().getTime() + 77);
     while (waitTill > new Date()) {}
     span.finish();
-    res.status(404).send('No available product found in Inventoty');
+    res.status(404).send('No available product found in Inventory');
   }
 })
 
