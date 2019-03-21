@@ -65,7 +65,7 @@ app.get('/checkAvailable/:productId', function (req, res) {
   span.setTag(Tags.HTTP_METHOD, 'GET');
 
   // Process request.
-  if (req.params.productId === "1" || req.params.productId === "3") {
+  if (req.params.productId === "1") {
     span.setTag(Tags.HTTP_STATUS_CODE, 200);
     span.log({'event': 'Product is available'});
     var waitTill = new Date(new Date().getTime() + 66);
